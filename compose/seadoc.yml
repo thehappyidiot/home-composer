@@ -31,6 +31,7 @@ services:
         condition: service_healthy
     networks:
       - seafile-net
+    env_file: "../.seafile.env"
 
 networks:
   seafile-net:

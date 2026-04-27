@@ -24,6 +24,7 @@ services:
       start_period: 30s
       timeout: 5s
       retries: 10
+    env_file: "../.seafile.env"
 
   redis:
     image: ${SEAFILE_REDIS_IMAGE:-redis}
@@ -37,6 +38,7 @@ services:
       - REDIS_PASSWORD=${REDIS_PASSWORD:-}
     networks:
       - seafile-net
+    env_file: "../.seafile.env"
 
   seafile:
     image: ${SEAFILE_IMAGE:-seafileltd/seafile-mc:13.0-latest}
@@ -97,6 +99,7 @@ services:
         condition: service_started
     networks:
       - seafile-net
+    env_file: "../.seafile.env"
 
 networks:
   seafile-net:
