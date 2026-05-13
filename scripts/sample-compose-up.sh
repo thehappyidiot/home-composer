@@ -1,0 +1,1 @@
+docker compose --env-file .something.env -f compose/something.yml up -d
