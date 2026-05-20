@@ -22,11 +22,13 @@ listeners:
     tls: false
     type: http
     x_forwarded: true
+# Database password (and other secrets): wrap in single quotes if they contain
+# YAML-special characters: & * # : { } [ ] , or leading * or &.
 database:
   name: psycopg2
   args:
     user: synapse
-    password: <pass>
+    password: '<pass>'
     dbname: synapse
     host: db
     cp_min: 5
@@ -34,10 +36,10 @@ database:
  
 log_config: "/data/thehappyidiot.com.log.config"
 media_store_path: /data/media_store
-registration_shared_secret: ""
+registration_shared_secret: '<registration_shared_secret>'
 report_stats: true
-macaroon_secret_key: ""
-form_secret: ""
+macaroon_secret_key: '<macaroon_secret_key>'
+form_secret: '<form_secret>'
 signing_key_path: "/data/thehappyidiot.com.signing.key"
 trusted_key_servers: []
 
