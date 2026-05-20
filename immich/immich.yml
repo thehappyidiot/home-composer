@@ -21,7 +21,7 @@ services:
       - ${UPLOAD_LOCATION}:/data
       - /etc/localtime:/etc/localtime:ro
     env_file:
-      - ../.immich.env
+      - .env
     ports:
       - '2283:2283'
     depends_on:
