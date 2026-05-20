@@ -33,7 +33,7 @@ services:
     ports:
       - ${PORT:-3001}:${PORT:-3000}
     environment:
-      - PORT=${PORT:-3001}
+      - PORT=${PORT:-3000}
       # - HOSTNAME=0.0.0.0 # Uncomment this, to have the server listen on all network interfaces. Needed when you want to connect to split-pro via docker internal networks, e.g. for reverse proxy setups.
     env_file: .env
     depends_on:
