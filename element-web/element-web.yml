@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  element-web:
+    image: vectorim/element-web:latest
+    container_name: element-web
+    restart: unless-stopped
+    ports:
+      # Binds to 127.0.0.1 by default for local-only access.
+      # Format: HOST_IP:HOST_PORT:CONTAINER_PORT
+      - "127.0.0.1:${HOST_PORT:-8080}:${ELEMENT_WEB_PORT:-80}"
+    volumes:
+      # Mounts your custom config.json into the container
+      - ./config.json:/app/config.json:ro
+      # Optional: Uncomment if you are using custom modules
+      # - ./modules:/modules:ro
+    environment:
+      # Tells nginx inside the container which port to listen on
+      - ELEMENT_WEB_PORT=${ELEMENT_WEB_PORT:-80}
