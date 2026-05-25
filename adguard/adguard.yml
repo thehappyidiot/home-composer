@@ -16,7 +16,7 @@ services:
       - "443:443/udp"
       
       # Management/Custom Ports
-      - "3000:3000/tcp"
+      - "3002:3000/tcp"
       - "853:853/tcp"
       
       # Other UDP/TCP Services
