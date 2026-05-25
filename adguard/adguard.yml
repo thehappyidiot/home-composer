@@ -9,8 +9,6 @@ services:
       # DNS/Local Network Services
       - "53:53/tcp"
       - "53:53/udp"
-      - "67:67/udp"
-      - "68:68/udp"
       
       # HTTP/S Web Interface
       - "80:80/tcp"
